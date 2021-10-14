@@ -25,7 +25,7 @@ def create_user():
         "new_id": insert(
             user_data.get("first_name"),
             user_data.get("last_name"),
-            user.data.get("hobbies")
+            user_data.get("hobbies")
         )
     }
     return out, 201
@@ -38,7 +38,7 @@ def delete_user(pk):
         "message": "Success"
     }
     deactivate_user(pk)
-    return out, 204
+    return out, 200
 
 @app.route("/users/<int:pk>", methods=["GET"])
 def get_single_user(pk):
